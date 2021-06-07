@@ -1,0 +1,389 @@
+{
+	"info": {
+		"_postman_id": "727e50cf-2311-4bda-ad6a-1ead42cd1df9",
+		"name": "Challenge Ativa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pessoas",
+			"item": [
+				{
+					"name": "pessoas por id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbkBhdGl2YS5jb20iLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwibm9tZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE2MjMwMzU1OTQsImF1dGhvcml0aWVzIjpbIlJPTEVfQ0FEQVNUUkFSX1BFU1NPQSIsIlJPTEVfUEVTUVVJU0FSX1BFU1NPQSIsIlJPTEVfUkVNT1ZFUl9QRVNTT0EiLCJST0xFX0FUVUFMSVpBUl9QRVNTT0EiXSwianRpIjoiZDA2ZjJiM2ItYTFkMy00OGYxLTg3N2ItOTEyYzUwOGE1MWY0IiwiY2xpZW50X2lkIjoiYXRpdmEifQ.ZkOVWHy4mCqU_lh2h7f8p0YGj4A-6N-8CyuHpzgQQWI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/pessoas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pesquisar pessoa",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbkBhdGl2YS5jb20iLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwibm9tZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE2MjMwMzc4NDYsImF1dGhvcml0aWVzIjpbIlJPTEVfQ0FEQVNUUkFSX1BFU1NPQSIsIlJPTEVfUEVTUVVJU0FSX1BFU1NPQSIsIlJPTEVfUkVNT1ZFUl9QRVNTT0EiLCJST0xFX0FUVUFMSVpBUl9QRVNTT0EiXSwianRpIjoiMjFmZWNhZjgtYWE5Mi00NmU5LWI2MGEtM2E3MjU2OGI5Yzk0IiwiY2xpZW50X2lkIjoiYXRpdmEifQ.6yFDO5TV8Fu7Kh6nE9AtUlg2zK75fbP1ZY3gq0qhOww",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/pessoas?page=0&size=5&nome=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoas"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "nome",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excluir pessoa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pessoas/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoas",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criar pessoa",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Leo\",\r\n    \"endereco\": {\r\n        \"logradouro\": \"Rua Doutor Delfim Rennó Moreira\",\r\n        \"numero\": \"75\",\r\n        \"complemento\": \"Apto 201\",\r\n        \"bairro\": \"Jardim Santo Antônio\",\r\n        \"cep\": \"37540-000\",\r\n        \"cidade\": \"Santa Rita do Sapucaí\",\r\n        \"estado\": \"MG\"\r\n    },\r\n    \"ativo\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pessoas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar pessoa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": null,\r\n    \"endereco\": {\r\n        \"logradouro\": \"Rua Doutor Delfim Rennó Moreira\",\r\n        \"numero\": \"75\",\r\n        \"complemento\": \"Apto 202\",\r\n        \"bairro\": \"Jardim Santo Antônio\",\r\n        \"cep\": \"37540-000\",\r\n        \"cidade\": \"Santa Rita do Sapucaí\",\r\n        \"estado\": \"MG\"\r\n    },\r\n    \"ativo\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pessoas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pessoa ativa",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "true",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pessoas/10/ativo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pessoas",
+								"10",
+								"ativo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Novo Acess Token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "ativa",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "@t1v@",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client",
+									"value": "ativa",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "admin@ativa.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/oauth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Novo Acess Token com Refresh Token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client",
+									"value": "ativa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhdGkiOiJjYjY2YmE4MC02MDEyLTRmOTEtOTk4Ny02ODAwYWNlOTdkY2IiLCJleHAiOjE2MjMwMTEzODQsImF1dGhvcml0aWVzIjpbIlJPTEVfUk9MRSJdLCJqdGkiOiI0NzNhNjM1NS1jY2JiLTQzNTItOGMzYS0xOWIzNGQ3M2FhNGUiLCJjbGllbnRfaWQiOiJhdGl2YSJ9.9ganfe3U-mhWDFzChpUgqqB6oggu23kyRS5t1zYdRik",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080//oauth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"",
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbkBhdGl2YS5jb20iLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiYXRpIjoiMTcxM2ZmOGEtNmUyYS00YmJmLThiMjctNzFkNmQ1NjFjZjIzIiwiZXhwIjoxNjIzMDIwNTY1LCJhdXRob3JpdGllcyI6WyJST0xFX1JFTU9WRVJfUEVTU09BIiwiUk9MRV9DQURBU1RSQVJfUEVTU09BIiwiUk9MRV9QRVNRVUlTQVJfUEVTU09BIl0sImp0aSI6IjBhZTZlNWQ1LTExMzAtNDk0OC1iMjBmLWVlNGRjYzkzZTgzYSIsImNsaWVudF9pZCI6ImF0aXZhIn0.-MVs_mtDmQZseBjvyG3XSDBhl1b5knanwwmBuD6_sIA\n",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/tokens/revoke",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tokens",
+								"revoke"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhdGl2YUBhdGl2YS5jb20iLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiYXRpIjoiMWIwNDE0OTgtZGRiYy00YjU0LWEyZmMtOWM1NDZhYTllMTYxIiwiZXhwIjoxNjIzMDIwMzY4LCJhdXRob3JpdGllcyI6WyJST0xFX1BFU1FVSVNBUl9QRVNTT0EiXSwianRpIjoiNjhjY2QwMzMtYTdiMi00MGZkLWE0NWUtMDk3NjlkOTY2NDI5IiwiY2xpZW50X2lkIjoiYXRpdmEifQ.bGB-4VXU4rRkAuyq5MAS0h0JyifMrjXzsRhow6jaP4U",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

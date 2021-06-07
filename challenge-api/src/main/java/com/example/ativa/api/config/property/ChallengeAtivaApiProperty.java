@@ -6,10 +6,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties("ativa")
 public class ChallengeAtivaApiProperty {
-	private String originPermitida = "http://localhost:8000";
+	private String originPermitida = "http://localhost:4200";
 
 	private final Seguranca seguranca = new Seguranca();
-
+	
+	
 	public Seguranca getSeguranca() {
 		return seguranca;
 	}
@@ -21,7 +22,7 @@ public class ChallengeAtivaApiProperty {
 	public void setOriginPermitida(String originPermitida) {
 		this.originPermitida = originPermitida;
 	}
-
+	
 	public static class Seguranca {
 
 		private boolean enableHttps;
@@ -33,7 +34,6 @@ public class ChallengeAtivaApiProperty {
 		public void setEnableHttps(boolean enableHttps) {
 			this.enableHttps = enableHttps;
 		}
-
 	}
 
 }
